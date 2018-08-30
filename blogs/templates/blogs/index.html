@@ -1,0 +1,25 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'blogs/style.css' %}">
+
+<title>My blogs</title>
+<h1>Blogs list</h1>
+<ul>
+{% for article in article_list%}
+<li><a href="{% url 'blogs:detail' article.id %}">{{ article.title }}</a><span>{{ article.pub_date|date:"Y-m-d H:i:s" }}</span></li>
+{% endfor %}
+</ul>
+
+{% if is_paginated %}
+<div class="pagination center-block">
+    <span>共{{ page_obj.paginator.num_pages }}页</span>
+    <span id="paging" class="step-links" style="display: block;text-align: center">
+        {% if page_obj.has_previous %}
+        <span><a href="?page={{ page_obj.previous_page_number }}">上一页</a></span>
+        {% endif %}
+        <span class="active">{{ page_obj.number }}</span>
+        {% if page_obj.has_next %}
+        <span><a href="?page={{ page_obj.next_page_number }}">下一页</a></span>
+        {% endif %}
+    </span>
+</div>
+{% endif %}

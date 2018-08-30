@@ -1,0 +1,6 @@
+body{width:600px;margin:10px auto;}
+ul li{border-bottom: 1px #ccc dashed;line-height: 26px;margin-top:5px; }
+ul li span{float:right}
+
+.pubdate{font-size: 14px;color: #bbb;}
+.content{font-size: 16px;line-height: 26px;}

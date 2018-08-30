@@ -1,0 +1,11 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'blogs/style.css' %}">
+
+<title>{{ articles.title }}</title>
+<h1>{{ articles.title }}</h1>
+<div class="pubdate">{{ articles.pub_date }}</div>
+<div class="content">
+{{ articles.content }}
+</div>
+<br/><br/>
+<a href="javascript:history.back();">返回</a>
